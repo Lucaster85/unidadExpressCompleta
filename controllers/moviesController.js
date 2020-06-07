@@ -23,6 +23,12 @@ let moviesController = {
     },
     delete (req, res) {
 
+    },
+    detail (req, res) {
+        db.Movies.findByPk(req.params.id)
+        .then(movie => {
+            res.render('detallePelicula', {movie})
+        })
     }
 };
 
