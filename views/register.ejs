@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/register.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <% if(typeof errors != 'undefined'){ %> 
+        <p style="color:Red">ERROR</p>
+        <% for(let i = 0; i<errors.length; i++){ %> 
+            <li>
+                <%=  errors[i].msg %>
+            </li> 
+    <% } %>     
+    <% } %>     
+    <h1>Register</h1>
+    <form action="/users/register" method="POST" enctype="multipart/form-data">
+        <label for="">Nombre</label>
+        <input type="text" name="name" id=""><br>
+        <label for="">Edad</label>
+        <input type="text" name="age"><br>
+        <label for="">Email</label>
+        <input type="email" name="email"><br>
+        <label for="">Avatar</label>
+        <input type="file" name="avatar"><br>
+        <label for="">Contraseña</label>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Registrar">
+
+
+        <p>HOBBIES</p>
+        <% for(let i=0; i < 10; i++){ %>
+            <label for="">Hobbie <%= i %> </label>
+            <% if(i % 2 == 0){ %>
+                <input class="par" type="text" name="hobbies" id=""><br>
+            <% }else{ %>
+                <input class="impar" type="text" name="hobbies" id=""><br>
+            <% } %>  
+        <% } %> 
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/register.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <h1>Usuario a editar <%= userToEdit.name %> </h1>
+    <form action="/users/edit?_method=PUT" method="POST">
+        <label for="">Nombre</label>
+        <input type="text" name="name" value="<%= userToEdit.name %> "><br>
+        <input type="submit" value="Editar">
+       
+    </form>
+</body>
+</html>
