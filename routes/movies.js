@@ -8,6 +8,8 @@ router.get('/drama', moviesController.drama);
 
 router.get('/top', moviesController.top);
 
+router.get('/totalTime', moviesController.totalTime);
+
 router.get('/:id', moviesController.detail);
 
 module.exports = router;

@@ -43,7 +43,7 @@ let moviesController = {
     top(req, res) {
         db.Movies.findAll({
             where: {
-                rating: { [db.Sequelize.Op.gt] : 8}
+                rating: { [db.Sequelize.Op.gt]: 8 }
             },
             order: [
                 ['title', 'ASC']
@@ -55,6 +55,12 @@ let moviesController = {
                 res.render('top', { movies })
             })
 
+    },
+    totalTime(req, res) {
+        db.Movies.sum('length')
+            .then(resultado => {
+                res.send(`El tiempo total de duracion de todas las peliculas es de ${resultado} minutos`);
+            })
     }
 };
 
