@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Listado de peliculas</h1>
     <ul>
-        <% for (let i = 0; i < movies.length; i++) { %> 
-            <li>
+        <% for (let i = 0; i < movies.length; i++) { %>
+        <li>
+            <a href="/movies/<%=movies[i].id%>">
                 <%= movies[i].title %>
-            </li>
-        <% } %> 
+            </a>
+        </li>
+        <% } %>
     </ul>
 </body>
+
 </html>
