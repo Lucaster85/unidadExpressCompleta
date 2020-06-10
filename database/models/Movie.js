@@ -20,31 +20,31 @@
             type: dataTypes.STRING(500),
             allowNull: false,
         },
-        /* rating:{
+        rating:{
             type: dataTypes.DECIMAL(3, 1).UNSIGNED,
             allowNull:false
-        }, */
-        /* awards:{
+        },
+        awards:{
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false,
             defaultValue: 0
-        }, */
-        /* release_date:{
+        },
+        release_date:{
             type: dataTypes.DATE,
             allowNull: false
-        }, */
+        },
         length: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: true
-        }
-        /* genre_id:{
+        },
+        genre_id:{
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: true,
             reference: {
                 model: 'genres',
                 key: "id"
-            } */
-        /* } */
+            }
+        }
     };
 
     let config = {
