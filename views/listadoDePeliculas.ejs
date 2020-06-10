@@ -17,8 +17,14 @@
     <lu>
         <% for (let i = 0; i < movies.length; i++) { %>
         <li>
-            <a href="/movies/detail/<%= movies[i].id %>"> <%= movies[i].title  %> </a> <form action="/movies/edit/<%= movies[i].id%> " method="GET">
-            <button class="btn btn-danger">Editar</button>
+            <h3>
+                <a href="/movies/detail/<%= movies[i].id %>"> <%= movies[i].title  %> </a>
+            </h3>
+            <form action="/movies/edit/<%= movies[i].id%> " method="GET">
+                <button class="btn btn-warning">Editar</button>
+            </form>
+            <form action="/movies/delete/<%= movies[i].id%> " method="POST">
+                <button class="btn btn-danger">Borrar</button>
             </form>
         </li>
         <% } %>

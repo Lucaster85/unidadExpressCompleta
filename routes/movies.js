@@ -18,6 +18,8 @@ router.get('/edit/:id', moviesController.edit);
 
 router.post('/edit/:id', moviesController.update);
 
+router.post('/delete/:id', moviesController.delete);
+
 router.get('/search', moviesController.search)
 
 router.get('/:id', moviesController.detail);

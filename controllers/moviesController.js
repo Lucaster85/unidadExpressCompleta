@@ -43,7 +43,12 @@ let moviesController = {
         res.redirect(`/movies/edit/${req.params.id}`)
     },
     delete(req, res) {
-
+        db.Movies.destroy({
+            where:{
+                id: req.params.id
+            }
+        })
+        res.redirect('/movies')
     },
     detail(req, res) {
         db.Movies.findByPk(req.params.id)
